@@ -1,0 +1,67 @@
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  border: none;
+  box-sizing: border-box;
+}
+
+.input-container {
+  display: grid;
+  grid-template:
+    'text text text text text' auto
+    'btn-cript btn-copy btn-clear btn-paste btn-decript' auto
+    'result result result result result' / auto;
+}
+
+.input-container__button {
+  height: 10vh;
+  width: 20vw;
+  outline: none;
+  font-size: 7vh;
+}
+
+.input-container__button:hover {
+  height: 10vh;
+  outline: none;
+  background: #e0e0e0;
+}
+
+.text-container {
+  resize: none;
+  outline: none;
+  height: 45vh;
+  padding: 1%;
+  font-size: 2em;
+}
+
+.input-container__text {
+  grid-area: text;
+  background: rgb(125, 255, 125);
+}
+
+.input-container__result {
+  grid-area: result;
+  background: rgb(255, 125, 125);
+}
+
+.input-container__button--cript {
+  grid-area: btn-cript;
+}
+
+.input-container__button--copy {
+  grid-area: btn-copy;
+}
+
+.input-container__button--clear {
+  grid-area: btn-clear;
+}
+
+.input-container__button--paste {
+  grid-area: btn-paste;
+}
+
+.input-container__button--decript {
+  grid-area: btn-decript;
+}
