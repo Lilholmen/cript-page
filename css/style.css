@@ -10,14 +10,14 @@
 .input-container {
   display: grid;
   grid-template:
-    'text text text text text' auto
-    'btn-cript btn-copy btn-clear btn-paste btn-decript' auto
-    'result result result result result' / auto;
+    'text text text text text text' auto
+    'btn-cript selector btn-copy btn-clear btn-paste btn-decript' auto
+    'result result result result result result' / auto;
 }
 
 .input-container__button {
   height: 10vh;
-  width: 20vw;
+  width: 18vw;
   outline: none;
   font-size: 7vh;
 }
@@ -48,6 +48,11 @@
 
 .input-container__button--cript {
   grid-area: btn-cript;
+}
+
+.input-container__selector {
+  width: 10vw;
+  grid-area: selector;
 }
 
 .input-container__button--copy {
