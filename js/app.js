@@ -1,15 +1,15 @@
 'use strict';
 //-------------------------initialize section-------------------------------------
-const inputArea = document.querySelector('.input-container__text');
-const criptButton = document.querySelector('.input-container__button--cript');
-const stepsSeletor = document.getElementById('steps');
-const copyButton = document.querySelector('.input-container__button--copy');
-const clearButton = document.querySelector('.input-container__button--clear');
-const pasteButton = document.querySelector('.input-container__button--paste');
-const decriptButton = document.querySelector(
-  '.input-container__button--decript'
-);
-const resultArea = document.querySelector('.input-container__result');
+//const stepsSeletor = document.getElementById('steps');
+
+const criptButton = document.getElementById('cript');
+const decriptButton = document.getElementById('decript');
+const clearButton = document.getElementById('clear');
+const copyButton = document.getElementById('copy');
+const pasteButton = document.getElementById('paste');
+
+const inputArea = document.getElementById('input-area');
+const resultArea = document.getElementById('result-area');
 //-------------------------Cript class declaration-------------------------------------
 class Cript {
   constructor() {
@@ -119,10 +119,7 @@ function generateKeyWord(keyWord) {
 criptButton.addEventListener('click', () => {
   test.getInput(inputArea.value);
   if (test.text !== '') {
-    test.encript(
-      stepsSeletor.options.selectedIndex + 1,
-      generateKeyWord('хуй')
-    );
+    test.encript(1, generateKeyWord('хуй'));
     resultArea.value = test.text;
     test.text = '';
   }
@@ -160,10 +157,7 @@ pasteButton.addEventListener('click', () => {
 decriptButton.addEventListener('click', () => {
   test.getInput(inputArea.value);
   if (test.text !== '') {
-    test.decript(
-      stepsSeletor.options.selectedIndex + 1,
-      generateKeyWord('хуй')
-    );
+    test.decript(1, generateKeyWord('хуй'));
     resultArea.value = test.text;
     test.text = '';
   }
