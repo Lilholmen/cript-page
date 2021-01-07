@@ -1,6 +1,6 @@
 'use strict';
 //-------------------------initialize section-------------------------------------
-//const stepsSeletor = document.getElementById('steps');
+const settingsButton = document.getElementById('settings');
 
 const criptButton = document.getElementById('cript');
 const decriptButton = document.getElementById('decript');
@@ -162,3 +162,5 @@ decriptButton.addEventListener('click', () => {
     test.text = '';
   }
 });
+
+settingsButton.addEventListener('click', () => {});

@@ -19,20 +19,21 @@
 }
 
 .page__menu {
-  grid-area: menu;
   background: #0b2027;
   width: 100%;
 }
 
 .menu__item {
   display: inline-block;
+  font-size: 32px;
+  color: white;
 }
 
 .menu__btn {
   outline: none;
   height: 100px;
   width: 120px;
-  font-size: 26px;
+  font-size: 32px;
   background: none;
   color: #fff;
   cursor: pointer;
@@ -51,18 +52,16 @@
   resize: none;
   outline: none;
   padding: 1%;
-  font-size: 15px;
+  font-size: 21px;
   width: 100%;
   height: calc((100vh - 100px) / 2);
 }
 
 .page__textarea--input {
-  grid-area: input;
   background: rgb(215, 230, 255);
   border-bottom: 5px solid #16414f;
 }
 
 .page__textarea--result {
-  grid-area: result;
   background: rgb(170, 200, 255);
 }
