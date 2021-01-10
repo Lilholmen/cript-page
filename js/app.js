@@ -1,7 +1,15 @@
 'use strict';
 //-------------------------initialize section-------------------------------------
 const settingsButton = document.getElementById('settings');
+const regularButtonContainer = document.querySelector('.menu__container--btn');
+const criptSettingsContainer = document.querySelector(
+  '.menu__container--settings'
+);
 
+const decreaseButton = document.getElementById('steps-decrease');
+const stepsCounter = document.getElementById('steps-counter');
+const increaseButton = document.getElementById('steps-increase');
+const keyWordInput = document.getElementById('keyWord');
 const criptButton = document.getElementById('cript');
 const decriptButton = document.getElementById('decript');
 const clearButton = document.getElementById('clear');
@@ -99,6 +107,7 @@ class Cript {
 const test = new Cript();
 
 function generateKeyWord(keyWord) {
+  if (!keyWord) return 1;
   return BigInt(
     keyWord
       .split('')
@@ -119,7 +128,7 @@ function generateKeyWord(keyWord) {
 criptButton.addEventListener('click', () => {
   test.getInput(inputArea.value);
   if (test.text !== '') {
-    test.encript(1, generateKeyWord('хуй'));
+    test.encript(stepsCounter.textContent, generateKeyWord(keyWordInput.value));
     resultArea.value = test.text;
     test.text = '';
   }
@@ -157,10 +166,28 @@ pasteButton.addEventListener('click', () => {
 decriptButton.addEventListener('click', () => {
   test.getInput(inputArea.value);
   if (test.text !== '') {
-    test.decript(1, generateKeyWord('хуй'));
+    test.decript(stepsCounter.textContent, generateKeyWord(keyWordInput.value));
     resultArea.value = test.text;
     test.text = '';
   }
 });
 
-settingsButton.addEventListener('click', () => {});
+settingsButton.addEventListener('click', () => {
+  const displayStates = ['none', 'inline-block'];
+  criptSettingsContainer.style.display =
+    displayStates[+(criptSettingsContainer.style.display === 'none')];
+  regularButtonContainer.style.display =
+    displayStates[+(criptSettingsContainer.style.display !== 'inline-block')];
+});
+
+increaseButton.addEventListener('click', () => {
+  if (stepsCounter.textContent < 9) {
+    stepsCounter.textContent++;
+  }
+});
+
+decreaseButton.addEventListener('click', () => {
+  if (stepsCounter.textContent > 1) {
+    stepsCounter.textContent--;
+  }
+});

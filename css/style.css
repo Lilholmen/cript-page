@@ -6,6 +6,7 @@
   border: none;
   box-sizing: border-box;
   font-size: 0;
+  font-family: 'Roboto', sans-serif;
 }
 
 .container {
@@ -29,6 +30,22 @@
   color: white;
 }
 
+.menu__item--input {
+  color: #0b2027;
+}
+
+.menu__container--steps {
+  text-align: center;
+}
+
+.steps__item__btn {
+  outline: none;
+  height: 100px;
+  background: none;
+  color: #fff;
+  cursor: pointer;
+}
+
 .menu__btn {
   outline: none;
   height: 100px;
@@ -46,6 +63,19 @@
 .menu__btn--settings {
   background: #16414f;
   width: 100px;
+}
+
+.menu__container--settings {
+  display: none;
+}
+
+.menu__container--steps {
+  width: 200px;
+  font-size: 32px;
+}
+
+.menu__container--btn {
+  display: inline-block;
 }
 
 .page__textarea {

@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
+
     <div class="container">
       <div class="page">
         <div class="page__menu--container">
@@ -20,31 +21,52 @@
                 S
               </button>
             </li>
-            <li class="menu__item">
-              <button class="menu__btn menu__btn--regular" id="cript">
-                cript
-              </button>
-            </li>
-            <li class="menu__item">
-              <button class="menu__btn menu__btn--regular" id="decript">
-                decript
-              </button>
-            </li>
-            <li class="menu__item">
-              <button class="menu__btn menu__btn--regular" id="clear">
-                clear
-              </button>
-            </li>
-            <li class="menu__item">
-              <button class="menu__btn menu__btn--regular" id="copy">
-                copy
-              </button>
-            </li>
-            <li class="menu__item">
-              <button class="menu__btn menu__btn--regular" id="paste">
-                paste
-              </button>
-            </li>
+            <div
+              class="menu menu__container menu__container--settings"
+              style="display: none"
+            >
+              <li class="menu__item">
+                <div class="menu__container menu__container--steps steps" id="steps-container">
+                  <button class="menu__item steps__item__btn steps__item__btn--decrease" id="steps-decrease"><</button>
+                  <span class="menu__item steps__item--counter" id="steps-counter">1</span>
+                  <button class="menu__item steps__item__btn steps__item__btn--increase" id="steps-increase">></button>
+                </div>
+              </li>
+              <li class="menu__item">
+                <input class="menu__item menu__item--input" id="keyWord" value=''>
+                </input>
+              </li>
+            </div>
+            <div
+              class="menu menu__container menu__container--btn"
+              style="display: inline-block"
+            >
+              <li class="menu__item">
+                <button class="menu__btn menu__btn--regular" id="cript">
+                  cript
+                </button>
+              </li>
+              <li class="menu__item">
+                <button class="menu__btn menu__btn--regular" id="decript">
+                  decript
+                </button>
+              </li>
+              <li class="menu__item">
+                <button class="menu__btn menu__btn--regular" id="clear">
+                  clear
+                </button>
+              </li>
+              <li class="menu__item">
+                <button class="menu__btn menu__btn--regular" id="copy">
+                  copy
+                </button>
+              </li>
+              <li class="menu__item">
+                <button class="menu__btn menu__btn--regular" id="paste">
+                  paste
+                </button>
+              </li>
+            </div>
           </ul>
         </div>
         <div class="page__textarea--container">
@@ -64,46 +86,6 @@
           ></textarea>
         </div>
       </div>
-      <!-------  <div class="input-container">
-        <textarea
-          class="input-container__text text-container"
-          type="text"
-          autofocus
-        ></textarea>
-        <button class="input-container__button input-container__button--cript">
-          cript
-        </button>
-        <div class="input-container__selector">
-          <select name="steps" id="steps">
-            <option selected value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-          </select>
-        </div>
-        <button class="input-container__button input-container__button--copy">
-          copy
-        </button>
-        <button class="input-container__button input-container__button--clear">
-          clear
-        </button>
-        <button class="input-container__button input-container__button--paste">
-          paste
-        </button>
-        <button
-          class="input-container__button input-container__button--decript"
-        >
-          decript
-        </button>
-        <textarea
-          class="input-container__result text-container"
-          readonly
-        ></textarea>
-      </div> ---------->
     </div>
 
     <script src="js/app.js"></script>
