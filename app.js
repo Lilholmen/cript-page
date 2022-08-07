@@ -1,20 +1,11 @@
 'use strict';
 //-------------------------initialize section-------------------------------------
-const settingsButton = document.getElementById('settings');
 const regularButtonContainer = document.querySelector('.menu__container--btn');
 const criptSettingsContainer = document.querySelector(
   '.menu__container--settings'
 );
-
-const decreaseButton = document.getElementById('steps-decrease');
-const stepsCounter = document.getElementById('steps-counter');
-const increaseButton = document.getElementById('steps-increase');
 const keyWordInput = document.getElementById('keyWord');
-const criptButton = document.getElementById('cript');
-const decriptButton = document.getElementById('decript');
-const clearButton = document.getElementById('clear');
-const copyButton = document.getElementById('copy');
-const pasteButton = document.getElementById('paste');
+const stepsCounter = document.querySelector('#steps-counter');
 
 const inputArea = document.getElementById('input-area');
 const resultArea = document.getElementById('result-area');
@@ -125,7 +116,7 @@ function generateKeyWord(keyWord) {
   );
 }
 //-------------------------add event listeners-------------------------------------
-criptButton.addEventListener('click', () => {
+document.getElementById('cript').addEventListener('click', () => {
   test.getInput(inputArea.value);
   if (test.text !== '') {
     test.encript(stepsCounter.textContent, generateKeyWord(keyWordInput.value));
@@ -134,7 +125,7 @@ criptButton.addEventListener('click', () => {
   }
 });
 
-copyButton.addEventListener('click', () => {
+document.getElementById('copy').addEventListener('click', () => {
   if (resultArea.value) {
     navigator.clipboard
       .writeText(resultArea.value)
@@ -147,12 +138,12 @@ copyButton.addEventListener('click', () => {
   }
 });
 
-clearButton.addEventListener('click', () => {
+document.getElementById('clear').addEventListener('click', () => {
   inputArea.value = '';
   resultArea.value = '';
 });
 
-pasteButton.addEventListener('click', () => {
+document.getElementById('paste').addEventListener('click', () => {
   navigator.clipboard
     .readText()
     .then((text) => {
@@ -163,7 +154,7 @@ pasteButton.addEventListener('click', () => {
     });
 });
 
-decriptButton.addEventListener('click', () => {
+document.getElementById('decript').addEventListener('click', () => {
   test.getInput(inputArea.value);
   if (test.text !== '') {
     test.decript(stepsCounter.textContent, generateKeyWord(keyWordInput.value));
@@ -172,7 +163,7 @@ decriptButton.addEventListener('click', () => {
   }
 });
 
-settingsButton.addEventListener('click', () => {
+document.getElementById('settings').addEventListener('click', () => {
   const displayStates = ['none', 'inline-block'];
   criptSettingsContainer.style.display =
     displayStates[+(criptSettingsContainer.style.display === 'none')];
@@ -180,13 +171,13 @@ settingsButton.addEventListener('click', () => {
     displayStates[+(criptSettingsContainer.style.display !== 'inline-block')];
 });
 
-increaseButton.addEventListener('click', () => {
+document.getElementById('steps-increase').addEventListener('click', () => {
   if (stepsCounter.textContent < 9) {
     stepsCounter.textContent++;
   }
 });
 
-decreaseButton.addEventListener('click', () => {
+document.getElementById('steps-decrease').addEventListener('click', () => {
   if (stepsCounter.textContent > 1) {
     stepsCounter.textContent--;
   }
